@@ -1,133 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG Tiny PS//EN"
-  "http://www.w3.org/Graphics/SVG/1.2/DTD/svg12-ps.dtd">
-<svg
-  version="1.2"
-  baseProfile="tiny-ps"
+<svg version="1.2" baseProfile="tiny-ps"
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 500 500"
-  width="500"
-  height="500"
-  xml:space="preserve"
-  title="EDUTEK">
+  width="500" height="500"
+  xml:space="preserve">
+  <title>EDUTEK</title>
 
   <!--
-    EDUTEK BIMI-Compliant Logo — SVG Tiny PS
-    ─────────────────────────────────────────
-    ✅ No font-family references (all text → paths/lines)
-    ✅ No external resources
-    ✅ No scripts or animations
-    ✅ Flat colors only (no gradients/filters)
-    ✅ 1:1 square viewBox (500×500)
-    ✅ Inline presentation attributes only
-    ─────────────────────────────────────────
-    Colors: Orange #F7941D | Navy #1a3ed4
+    EDUTEK BIMI Logo v3
+    ✅ No DOCTYPE (prevents DTD fetch timeout)
+    ✅ All shapes use fill (max renderer compatibility)
+    ✅ No font-family, no gradients, no filters, no scripts
+    ✅ SVG Tiny PS 1.2 compliant
+    ✅ 500×500 square viewBox
   -->
 
-  <!-- ── White circle background ── -->
+  <!-- ── White background circle ── -->
   <circle cx="250" cy="250" r="250" fill="#ffffff"/>
 
-  <!-- ── Decorative border rings ── -->
-  <circle cx="250" cy="250" r="244" fill="none" stroke="#F7941D" stroke-width="6"/>
-  <circle cx="250" cy="250" r="236" fill="none" stroke="#1a3ed4" stroke-width="2"/>
+  <!-- ── Border: outer orange ring ── -->
+  <circle cx="250" cy="250" r="247" fill="none" stroke="#F7941D" stroke-width="6"/>
+  <!-- ── Border: inner navy ring ── -->
+  <circle cx="250" cy="250" r="239" fill="none" stroke="#1a3ed4" stroke-width="2"/>
 
   <!-- ════════════════════════════════
-       GRADUATION CAP
+       GRADUATION CAP (fill-based)
        ════════════════════════════════ -->
 
-  <!-- Diamond brim -->
-  <polygon points="250,102 374,157 250,212 126,157"
-    fill="none" stroke="#1a3ed4" stroke-width="11"
-    stroke-linejoin="round"/>
+  <!-- Diamond brim — thick filled polygon border via two polygons -->
+  <!-- Outer brim shape (navy) -->
+  <polygon points="250,96 381,154 250,212 119,154"
+    fill="#1a3ed4"/>
+  <!-- Inner brim cutout (white) — slightly smaller -->
+  <polygon points="250,108 367,157 250,206 133,157"
+    fill="#ffffff"/>
 
-  <!-- Top board oval -->
-  <ellipse cx="250" cy="102" rx="52" ry="18"
-    fill="none" stroke="#F7941D" stroke-width="9"/>
+  <!-- Top board — orange filled ring (outer ellipse minus inner) -->
+  <!-- Outer ellipse -->
+  <ellipse cx="250" cy="96" rx="56" ry="20" fill="#F7941D"/>
+  <!-- Inner ellipse cutout -->
+  <ellipse cx="250" cy="96" rx="44" ry="11" fill="#ffffff"/>
 
-  <!-- Tassel cord -->
-  <line x1="126" y1="157" x2="126" y2="246"
-    stroke="#1a3ed4" stroke-width="8" stroke-linecap="round"/>
+  <!-- Tassel cord (navy filled rect, rotated) -->
+  <rect x="118" y="154" width="10" height="92" rx="5" fill="#1a3ed4"/>
 
-  <!-- Tassel knot block -->
-  <rect x="110" y="246" width="32" height="13" rx="4" fill="#F7941D"/>
+  <!-- Tassel knot -->
+  <rect x="104" y="246" width="36" height="14" rx="5" fill="#F7941D"/>
 
-  <!-- Tassel fringe lines -->
-  <line x1="117" y1="259" x2="113" y2="280"
-    stroke="#F7941D" stroke-width="4" stroke-linecap="round"/>
-  <line x1="126" y1="259" x2="126" y2="283"
-    stroke="#F7941D" stroke-width="4" stroke-linecap="round"/>
-  <line x1="135" y1="259" x2="139" y2="280"
-    stroke="#F7941D" stroke-width="4" stroke-linecap="round"/>
+  <!-- Tassel fringe — 3 thin filled rects -->
+  <rect x="111" y="260" width="5" height="24" rx="2" fill="#F7941D"
+    transform="rotate(-5,111,260)"/>
+  <rect x="121" y="260" width="5" height="27" rx="2" fill="#F7941D"/>
+  <rect x="131" y="260" width="5" height="24" rx="2" fill="#F7941D"
+    transform="rotate(5,131,260)"/>
 
-  <!-- Magnifying glass lens -->
-  <circle cx="250" cy="157" r="31"
-    fill="none" stroke="#F7941D" stroke-width="10"/>
+  <!-- Magnifying glass: orange filled ring -->
+  <circle cx="250" cy="157" r="37" fill="#F7941D"/>
+  <circle cx="250" cy="157" r="26" fill="#ffffff"/>
 
-  <!-- Magnifying glass handle -->
-  <line x1="274" y1="181" x2="297" y2="207"
-    stroke="#F7941D" stroke-width="11" stroke-linecap="round"/>
+  <!-- Magnifying glass handle (orange filled rotated rect) -->
+  <rect x="268" y="172" width="12" height="38" rx="6" fill="#F7941D"
+    transform="rotate(45,274,191)"/>
 
   <!-- ════════════════════════════════
-       LOGO TEXT — ALL AS PATH/SHAPES
-       (no font-family used anywhere)
-
-       Horizontal layout centered at x=250:
-         'e' cx≈114  |  'd' cx≈168,stem=191
-         'u' x=206–242  |  't' x=269
-         'e' cx≈326  |  'k' x=382–408
-
-       Total span: x=87–413 (326px), center=250 ✓
+       LOGO TEXT — FILL ONLY
+       All letters built from filled rects, circles, paths
+       sw = virtual stroke width = 11px
        ════════════════════════════════ -->
 
-  <!-- ── 'e' (orange) ──
-       Circle center ≈ (114,340), r=23
-       Opening faces right (gap at 3 o'clock) -->
-  <path d="M 135,330 A 23,23 0 1,0 135,350"
-    fill="none" stroke="#F7941D" stroke-width="11" stroke-linecap="round"/>
-  <line x1="92" y1="340" x2="137" y2="340"
-    stroke="#F7941D" stroke-width="11" stroke-linecap="round"/>
+  <!-- ┌─────────────────────────────────────────────┐
+       │  'e'  orange  cx≈114  (open circle + bar)   │
+       └─────────────────────────────────────────────┘ -->
+  <!-- Outer filled circle -->
+  <circle cx="114" cy="340" r="28" fill="#F7941D"/>
+  <!-- Inner white cutout -->
+  <circle cx="114" cy="340" r="17" fill="#ffffff"/>
+  <!-- Right-side gap (white rectangle cuts opening) -->
+  <rect x="126" y="328" width="30" height="24" fill="#ffffff"/>
+  <!-- Restore middle crossbar (orange rect) -->
+  <rect x="86" y="334" width="56" height="11" rx="2" fill="#F7941D"/>
 
-  <!-- ── 'd' (orange) ──
-       Bowl: circle cx=168,cy=348,r=23
-       Stem: x=191, extends above bowl to y=298 -->
-  <circle cx="168" cy="348" r="23"
-    fill="none" stroke="#F7941D" stroke-width="11"/>
-  <line x1="191" y1="298" x2="191" y2="372"
-    stroke="#F7941D" stroke-width="11" stroke-linecap="round"/>
+  <!-- ┌─────────────────────────────────────────────┐
+       │  'd'  orange  bowl cx=178, stem x=201       │
+       └─────────────────────────────────────────────┘ -->
+  <!-- Circle ring (bowl) -->
+  <circle cx="178" cy="348" r="28" fill="#F7941D"/>
+  <circle cx="178" cy="348" r="17" fill="#ffffff"/>
+  <!-- Stem (tall vertical filled rect) -->
+  <rect x="195" y="296" width="11" height="80" rx="5" fill="#F7941D"/>
+  <!-- White cutout to separate stem from bowl visually at bottom -->
 
-  <!-- ── 'u' (orange) ──
-       Two stems connected by bottom curve
-       Left stem x=206, right x=242 -->
-  <path d="M 206,298 V 354 Q 206,372 224,372 Q 242,372 242,354 V 298"
-    fill="none" stroke="#F7941D" stroke-width="11"
-    stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- ┌─────────────────────────────────────────────┐
+       │  'u'  orange  left=220 right=258            │
+       └─────────────────────────────────────────────┘ -->
+  <!-- Left stem -->
+  <rect x="214" y="296" width="11" height="62" rx="5" fill="#F7941D"/>
+  <!-- Right stem -->
+  <rect x="252" y="296" width="11" height="62" rx="5" fill="#F7941D"/>
+  <!-- Bottom curve: semicircle -->
+  <path d="M 214,352 Q 214,375 239,375 Q 264,375 263,352 L 252,352
+           Q 252,365 239,365 Q 226,365 225,352 Z"
+    fill="#F7941D"/>
 
-  <!-- ── 't' (navy) ──
-       Stem x=269, crossbar at y=312 -->
-  <line x1="269" y1="276" x2="269" y2="372"
-    stroke="#1a3ed4" stroke-width="11" stroke-linecap="round"/>
-  <line x1="252" y1="312" x2="286" y2="312"
-    stroke="#1a3ed4" stroke-width="11" stroke-linecap="round"/>
+  <!-- ┌─────────────────────────────────────────────┐
+       │  't'  navy   stem=284  bar y=315            │
+       └─────────────────────────────────────────────┘ -->
+  <!-- Stem -->
+  <rect x="278" y="274" width="11" height="102" rx="5" fill="#1a3ed4"/>
+  <!-- Crossbar -->
+  <rect x="260" y="309" width="47" height="11" rx="5" fill="#1a3ed4"/>
 
-  <!-- ── 'e' (navy) ──
-       Circle center ≈ (326,340), r=23
-       Opening faces right -->
-  <path d="M 349,330 A 23,23 0 1,0 349,350"
-    fill="none" stroke="#1a3ed4" stroke-width="11" stroke-linecap="round"/>
-  <line x1="303" y1="340" x2="351" y2="340"
-    stroke="#1a3ed4" stroke-width="11" stroke-linecap="round"/>
+  <!-- ┌─────────────────────────────────────────────┐
+       │  'e'  navy   cx≈330                         │
+       └─────────────────────────────────────────────┘ -->
+  <circle cx="330" cy="340" r="28" fill="#1a3ed4"/>
+  <circle cx="330" cy="340" r="17" fill="#ffffff"/>
+  <rect x="342" y="328" width="30" height="24" fill="#ffffff"/>
+  <rect x="302" y="334" width="56" height="11" rx="2" fill="#1a3ed4"/>
 
-  <!-- ── 'k' (navy) ──
-       Stem x=382, fork point y=338
-       Upper arm → (408,298), Lower arm → (408,372) -->
-  <line x1="382" y1="298" x2="382" y2="372"
-    stroke="#1a3ed4" stroke-width="11" stroke-linecap="round"/>
-  <line x1="382" y1="338" x2="408" y2="298"
-    stroke="#1a3ed4" stroke-width="11" stroke-linecap="round"/>
-  <line x1="382" y1="338" x2="408" y2="372"
-    stroke="#1a3ed4" stroke-width="11" stroke-linecap="round"/>
+  <!-- ┌─────────────────────────────────────────────┐
+       │  'k'  navy   stem=380  fork y=340           │
+       └─────────────────────────────────────────────┘ -->
+  <!-- Stem -->
+  <rect x="374" y="296" width="11" height="80" rx="5" fill="#1a3ed4"/>
+  <!-- Upper arm (diagonal rect rotated) -->
+  <rect x="374" y="296" width="11" height="52" rx="4" fill="#1a3ed4"
+    transform="rotate(-37,379,340)"/>
+  <!-- Lower arm (diagonal rect rotated) -->
+  <rect x="374" y="340" width="11" height="52" rx="4" fill="#1a3ed4"
+    transform="rotate(37,379,340)"/>
 
   <!-- ── Orange underline accent ── -->
-  <rect x="87" y="382" width="326" height="6" rx="3" fill="#F7941D"/>
+  <rect x="86" y="385" width="310" height="7" rx="3" fill="#F7941D"/>
 
 </svg>
