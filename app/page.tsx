@@ -580,7 +580,15 @@ const navItems = [
               </p>
 
               <div className="mt-6 flex flex-col gap-4 sm:flex-row">
-                <Button className="rounded-full bg-[#e67e22] px-6 text-white hover:bg-[#f39c12]">
+                <Button 
+                  onClick={() => {
+                    const target = document.querySelector("#cozumler");
+                    if (target) {
+                      target.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                  }}
+                  className="rounded-full bg-[#e67e22] px-6 text-white hover:bg-[#f39c12]"
+                >
                   {t.hero.exploreSolutions}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
