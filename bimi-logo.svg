@@ -11,74 +11,123 @@
   xml:space="preserve"
   title="EDUTEK">
 
-  <!-- =============================================
-       EDUTEK BIMI Logo — SVG Tiny PS Profile
-       Dimensions : 500x500 (1:1 square — BIMI required)
-       Profile    : SVG Tiny PS (no scripts, no external refs)
-       Colors     : Orange #F7941D | Navy #1a3ed4
-       ============================================= -->
+  <!--
+    EDUTEK BIMI-Compliant Logo — SVG Tiny PS
+    ─────────────────────────────────────────
+    ✅ No font-family references (all text → paths/lines)
+    ✅ No external resources
+    ✅ No scripts or animations
+    ✅ Flat colors only (no gradients/filters)
+    ✅ 1:1 square viewBox (500×500)
+    ✅ Inline presentation attributes only
+    ─────────────────────────────────────────
+    Colors: Orange #F7941D | Navy #1a3ed4
+  -->
 
-  <!-- Background circle (white) -->
+  <!-- ── White circle background ── -->
   <circle cx="250" cy="250" r="250" fill="#ffffff"/>
 
-  <!-- ---- Graduation Cap ---- -->
+  <!-- ── Decorative border rings ── -->
+  <circle cx="250" cy="250" r="244" fill="none" stroke="#F7941D" stroke-width="6"/>
+  <circle cx="250" cy="250" r="236" fill="none" stroke="#1a3ed4" stroke-width="2"/>
+
+  <!-- ════════════════════════════════
+       GRADUATION CAP
+       ════════════════════════════════ -->
+
   <!-- Diamond brim -->
-  <polygon
-    points="250,105 370,160 250,215 130,160"
-    fill="none"
-    stroke="#1a3ed4"
-    stroke-width="12"
+  <polygon points="250,102 374,157 250,212 126,157"
+    fill="none" stroke="#1a3ed4" stroke-width="11"
     stroke-linejoin="round"/>
 
-  <!-- Top board (oval) -->
-  <ellipse cx="250" cy="105" rx="52" ry="18"
-    fill="none" stroke="#F7941D" stroke-width="10"/>
+  <!-- Top board oval -->
+  <ellipse cx="250" cy="102" rx="52" ry="18"
+    fill="none" stroke="#F7941D" stroke-width="9"/>
 
-  <!-- Tassel cord (left) -->
-  <line x1="130" y1="160" x2="130" y2="248"
-    stroke="#1a3ed4" stroke-width="9" stroke-linecap="round"/>
+  <!-- Tassel cord -->
+  <line x1="126" y1="157" x2="126" y2="246"
+    stroke="#1a3ed4" stroke-width="8" stroke-linecap="round"/>
 
-  <!-- Tassel knot -->
-  <rect x="113" y="248" width="34" height="14" rx="5"
-    fill="#F7941D"/>
+  <!-- Tassel knot block -->
+  <rect x="110" y="246" width="32" height="13" rx="4" fill="#F7941D"/>
 
   <!-- Tassel fringe lines -->
-  <line x1="120" y1="262" x2="116" y2="285"
+  <line x1="117" y1="259" x2="113" y2="280"
     stroke="#F7941D" stroke-width="4" stroke-linecap="round"/>
-  <line x1="130" y1="262" x2="130" y2="288"
+  <line x1="126" y1="259" x2="126" y2="283"
     stroke="#F7941D" stroke-width="4" stroke-linecap="round"/>
-  <line x1="140" y1="262" x2="144" y2="285"
+  <line x1="135" y1="259" x2="139" y2="280"
     stroke="#F7941D" stroke-width="4" stroke-linecap="round"/>
 
-  <!-- ---- Magnifying Glass (inside cap) ---- -->
-  <circle cx="250" cy="160" r="34"
+  <!-- Magnifying glass lens -->
+  <circle cx="250" cy="157" r="31"
     fill="none" stroke="#F7941D" stroke-width="10"/>
-  <!-- Handle -->
-  <line x1="276" y1="186" x2="300" y2="212"
+
+  <!-- Magnifying glass handle -->
+  <line x1="274" y1="181" x2="297" y2="207"
     stroke="#F7941D" stroke-width="11" stroke-linecap="round"/>
 
-  <!-- ---- Logo Text ---- -->
-  <!-- "edu" — orange -->
-  <text
-    x="100"
-    y="355"
-    font-family="Arial, Helvetica, sans-serif"
-    font-size="92"
-    font-weight="800"
-    fill="#F7941D"
-    letter-spacing="-2">edu</text>
+  <!-- ════════════════════════════════
+       LOGO TEXT — ALL AS PATH/SHAPES
+       (no font-family used anywhere)
 
-  <!-- "tek" — navy -->
-  <text
-    x="282"
-    y="355"
-    font-family="Arial, Helvetica, sans-serif"
-    font-size="92"
-    font-weight="800"
-    fill="#1a3ed4"
-    letter-spacing="-2">tek</text>
+       Horizontal layout centered at x=250:
+         'e' cx≈114  |  'd' cx≈168,stem=191
+         'u' x=206–242  |  't' x=269
+         'e' cx≈326  |  'k' x=382–408
 
-  <!-- Thin orange underline accent -->
-  <rect x="100" y="368" width="300" height="6" rx="3" fill="#F7941D"/>
+       Total span: x=87–413 (326px), center=250 ✓
+       ════════════════════════════════ -->
+
+  <!-- ── 'e' (orange) ──
+       Circle center ≈ (114,340), r=23
+       Opening faces right (gap at 3 o'clock) -->
+  <path d="M 135,330 A 23,23 0 1,0 135,350"
+    fill="none" stroke="#F7941D" stroke-width="11" stroke-linecap="round"/>
+  <line x1="92" y1="340" x2="137" y2="340"
+    stroke="#F7941D" stroke-width="11" stroke-linecap="round"/>
+
+  <!-- ── 'd' (orange) ──
+       Bowl: circle cx=168,cy=348,r=23
+       Stem: x=191, extends above bowl to y=298 -->
+  <circle cx="168" cy="348" r="23"
+    fill="none" stroke="#F7941D" stroke-width="11"/>
+  <line x1="191" y1="298" x2="191" y2="372"
+    stroke="#F7941D" stroke-width="11" stroke-linecap="round"/>
+
+  <!-- ── 'u' (orange) ──
+       Two stems connected by bottom curve
+       Left stem x=206, right x=242 -->
+  <path d="M 206,298 V 354 Q 206,372 224,372 Q 242,372 242,354 V 298"
+    fill="none" stroke="#F7941D" stroke-width="11"
+    stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ── 't' (navy) ──
+       Stem x=269, crossbar at y=312 -->
+  <line x1="269" y1="276" x2="269" y2="372"
+    stroke="#1a3ed4" stroke-width="11" stroke-linecap="round"/>
+  <line x1="252" y1="312" x2="286" y2="312"
+    stroke="#1a3ed4" stroke-width="11" stroke-linecap="round"/>
+
+  <!-- ── 'e' (navy) ──
+       Circle center ≈ (326,340), r=23
+       Opening faces right -->
+  <path d="M 349,330 A 23,23 0 1,0 349,350"
+    fill="none" stroke="#1a3ed4" stroke-width="11" stroke-linecap="round"/>
+  <line x1="303" y1="340" x2="351" y2="340"
+    stroke="#1a3ed4" stroke-width="11" stroke-linecap="round"/>
+
+  <!-- ── 'k' (navy) ──
+       Stem x=382, fork point y=338
+       Upper arm → (408,298), Lower arm → (408,372) -->
+  <line x1="382" y1="298" x2="382" y2="372"
+    stroke="#1a3ed4" stroke-width="11" stroke-linecap="round"/>
+  <line x1="382" y1="338" x2="408" y2="298"
+    stroke="#1a3ed4" stroke-width="11" stroke-linecap="round"/>
+  <line x1="382" y1="338" x2="408" y2="372"
+    stroke="#1a3ed4" stroke-width="11" stroke-linecap="round"/>
+
+  <!-- ── Orange underline accent ── -->
+  <rect x="87" y="382" width="326" height="6" rx="3" fill="#F7941D"/>
 
 </svg>
